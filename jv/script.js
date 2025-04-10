@@ -2,9 +2,10 @@
 
 const nameEL = document.getElementById("name-input");
 const distanceEL = document.getElementById("distance-input");
-const agedeEL = document.getElementById("age-input");
+
 const buttonEL = document.getElementById("button-input");
 const forumregisteredEL = document.getElementById("forum-person");
+const typeAgeEl = document.getElementById("inputGroupSelect01");
 
 // elementi da inserire
 
@@ -23,14 +24,16 @@ forumregisteredEL.addEventListener("submit", (e) => {
 
   const name = nameEL.value;
   const distance = parseInt(distanceEL.value);
-  const age = agedeEL.value;
+
+  const typeAge = typeAgeEl.value;
   const button = buttonEL.value;
 
   // console
 
   console.log("nome ", name);
   console.log("distanza ", distance);
-  console.log("age ", age);
+
+  console.log("type age ", typeAge);
   console.log("bottone ", button);
 
   //  calcolo prezzo biglietto
@@ -45,14 +48,16 @@ forumregisteredEL.addEventListener("submit", (e) => {
   console.log("costo young ", tarifyoung);
   console.log("costo old ", tarifold);
 
-  if (age > 65) {
+  if (typeAge == 3) {
     price = tarifold.toFixed(2);
     typeOfprice = "Tariffa Over 65";
-  } else if (age < 18) {
+  } else if (typeAge == 2) {
     price = tarifyoung.toFixed(2);
     typeOfprice = "Tariffa Under 18";
   } else price.toFixed(2);
   typeOfprice;
+
+  //   faccio comparire il biglietto
   ticketAdd.classList.remove("d-none");
 
   // inserisco nel biglietto
