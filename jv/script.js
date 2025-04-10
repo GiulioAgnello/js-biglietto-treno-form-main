@@ -8,11 +8,11 @@ const forumregisteredEL = document.getElementById("forum-person");
 
 // elementi da inserire
 
-const passengerName = document.getElementsByClassName("name-pass");
-const priceType = document.getElementsByClassName("typeofTarif");
-const vagonNumber = document.getElementsByClassName("vagon-number");
-const codeCp = document.getElementsByClassName("code-cp");
-const finalPrice = document.getElementsByClassName("price-final");
+const passengerName = document.getElementById("name-pass");
+const priceType = document.getElementById("typeofTarif");
+const vagonNumber = document.getElementById("vagon-number");
+const codeCp = document.getElementById("code-cp");
+const finalPrice = document.getElementById("price-final");
 
 // ascolto l'invio del forum
 forumregisteredEL.addEventListener("submit", (e) => {
@@ -35,19 +35,30 @@ forumregisteredEL.addEventListener("submit", (e) => {
 
   //  calcolo prezzo biglietto
 
-  const price = distance * 0.21;
+  let price = distance * 0.21;
   const tarifyoung = price - (price * 20) / 100;
   const tarifold = price - (price * 40) / 100;
+  let typeOfprice = "Tariffa Standard";
 
+  //   console log
   console.log("costo ", price);
   console.log("costo young ", tarifyoung);
   console.log("costo old ", tarifold);
 
   if (age > 65) {
-    tarifold.toFixed(2);
+    price = tarifold.toFixed(2);
+    typeOfprice = "Tariffa Over 65";
   } else if (age < 18) {
-    tarifyoung.toFixed(2);
+    price = tarifyoung.toFixed(2);
+    typeOfprice = "Tariffa Under 18";
   } else price.toFixed(2);
+  typeOfprice;
 
   // inserisco nel biglietto
+
+  passengerName.innerText = `${name}`;
+  priceType.innerText = `${typeOfprice}`;
+  vagonNumber.innerText = `Carrozza: ${Math.floor(Math.random() * 10)}`;
+  codeCp.innerText = `Codice CP: ${Math.floor(Math.random() * 1000)}`;
+  finalPrice.innerText = `costo: ${price} €`;
 });
