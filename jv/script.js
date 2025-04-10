@@ -13,7 +13,7 @@ const priceType = document.getElementById("typeofTarif");
 const vagonNumber = document.getElementById("vagon-number");
 const codeCp = document.getElementById("code-cp");
 const finalPrice = document.getElementById("price-final");
-
+const ticketAdd = document.getElementById("card-ticket");
 // ascolto l'invio del forum
 forumregisteredEL.addEventListener("submit", (e) => {
   // evito il reloaded
@@ -53,6 +53,7 @@ forumregisteredEL.addEventListener("submit", (e) => {
     typeOfprice = "Tariffa Under 18";
   } else price.toFixed(2);
   typeOfprice;
+  ticketAdd.classList.remove("d-none");
 
   // inserisco nel biglietto
 
