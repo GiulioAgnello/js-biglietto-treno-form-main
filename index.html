@@ -32,22 +32,45 @@
       <h1>Treniboolean</h1>
     </header>
     <main>
-      <div class="container d-flex justify-content-center">
-        <div class="row">
-          <div class="col">
+      <div class="container">
+        <div class="row mt-5 d-flex justify-content-center">
+          <div class="col-6">
             <form id="forum-person">
-              <label>Nome e Cognome</label>
-              <input type="text" id="name-input" />
+              <label>Nome e Cognome</label><br />
+              <input type="text" id="name-input" /><br />
               <label>km</label>
-              <input type="text" id="distance-input" />
-              <button type="button" class="btn btn-primary" id="button-input">
+              <input type="number" id="distance-input" /><br />
+              <label>Età</label>
+              <input type="number" id="age-input" /><br />
+
+              <button type="submit" class="btn btn-primary" id="button-input">
                 invia
               </button>
             </form>
           </div>
         </div>
         <div class="row">
-          <div class="col">tiket</div>
+          <div class="col-6">
+            <div class="card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                 <img class="img-fluid" src="./img/69006154-vettore-retrò-treno-logo-su-sfondo-bianco.jpg" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title name-pass">Nome passeggiero</h5>
+                    <div class="typeofTarif">tipo di tariffa</div>
+                    <div class="vagon-number">carrozza</div>
+                    <div class="code-cp">Codice CP</div>
+
+                    <p class="card-text">
+                      <div class="price-final">costo finale</div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
